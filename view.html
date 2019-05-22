@@ -1,56 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5i8uMyxDZu8rd7cNpEpGBYkOIXjjcWWk&callback=initMap">
-        </script>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Mapa</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-lat='21.03' data-lng='105.85'>
-        Location 1
-      </button>
-          
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">            
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close buttonXStyle" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title titleStyle">MAPA DE ZONAS</h4>
-                </div>
-                <div class="backRepeat"></div>
-                <div class="modal-body">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <span class="testStyle">
-                          Celebra con Marisa la alegría de estar aquí; sopla las velitas de la manera tradicional.
-                      </span>
-                    </div>
-                  </div>
-                  <div class="row">
-                      <div id="map" style=" height: 400px"></div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default buttonStyle" data-dismiss="modal">CERRAR</button>
-                </div>
-              </div>
-              
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5i8uMyxDZu8rd7cNpEpGBYkOIXjjcWWk&callback=initMap">
+  </script>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Mapa</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!----<button type="button" class="close buttonXStyle" data-dismiss="modal">&times;</button>-->
+          <h4 class="modal-title titleStyle">MAPA DE ZONAS</h4>
+        </div>
+        <div class="backRepeat"></div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <span class="testStyle">
+                Celebra con Marisa la alegría de estar aquí; sopla las velitas de la manera tradicional.
+              </span>
             </div>
           </div>
-        <div id="map"></div>
-    <script src="js/Controlller.js"></script>
-    <script type="text/javascript">
+          <div class="row">
+            <div id="map" style=" height: 400px; margin:10px;"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default buttonStyle" data-dismiss="modal">CERRAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="map"></div>
+  <script src="js/Controlller.js"></script>
+</body>
 
-  </script>
-  </body>
 </html>

@@ -2,8 +2,9 @@
 function initMap() {
   var arraydata = dataStructure()
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12.7,
+    zoom: 13,
     mapTypeControl: false,
+    disableDefaultUI:true,
     center: {
       lat: 20.681845076925256,
       lng: -103.39608907699585
@@ -18,7 +19,7 @@ function initMap() {
       paths: auxArraydata,
       strokeColor: arraydata[i][0].color,
       strokeOpacity: 0.8,
-      strokeWeight: 2,
+      strokeWeight: 0,
       fillColor: arraydata[i][0].color,
       fillOpacity: 0.35
     });
@@ -35,10 +36,7 @@ function initMap() {
     $('#myModal').on('shown', function() {
       google.maps.event.trigger(map, "resize");
      
-    });
-
-
-  
+    });  
 });
 
 
@@ -48,7 +46,7 @@ function dataStructure() {
   var str = `[
       {
         "area1":{
-          "color":"#DD92D4",
+          "color":"#F48473",
           "data":[
             {
               "lng":-103.38847160339355,
@@ -79,7 +77,7 @@ function dataStructure() {
       },
       {
         "area2":{
-          "color":"#8E9FD8",
+          "color":"#F48473",
           "data":[
             {
               "lng":-103.38847160339355,
