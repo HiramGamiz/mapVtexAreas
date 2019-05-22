@@ -1,7 +1,9 @@
+
 function initMap() {
   var arraydata = dataStructure()
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12.5,
+    zoom: 12.7,
+    mapTypeControl: false,
     center: {
       lat: 20.681845076925256,
       lng: -103.39608907699585
@@ -26,6 +28,20 @@ function initMap() {
     console.log(poligonos[aux])
     poligonos[aux].setMap(map);
   }
+
+  $(window).on('load',function(){
+    $('#myModal').modal('show');
+    // Trigger map resize event after modal shown
+    $('#myModal').on('shown', function() {
+      google.maps.event.trigger(map, "resize");
+     
+    });
+
+
+  
+});
+
+
 }
 
 function dataStructure() {
@@ -122,3 +138,6 @@ function dataStructure() {
   console.log(poligonos);
   return poligonos
 }
+
+
+
