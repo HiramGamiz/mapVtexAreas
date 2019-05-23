@@ -133,7 +133,6 @@ function getCoordinatesFromAddress(PARAM_address) {
   var geocoder = new google.maps.Geocoder();
   return  geocoder.geocode(param1, param2);;
 }
-
 /*
 * @param lat:latitud  
 * @param @lng :Longitud
