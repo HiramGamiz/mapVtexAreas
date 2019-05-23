@@ -5,7 +5,7 @@
 function initMap() {
   var arraydata = dataStructure();
   var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12.5, disableDefaultUI: true
+    zoom: 12.5, disableDefaultUI: true,
     center: {
       lat: 20.681845076925256,
       lng: -103.39608907699585
