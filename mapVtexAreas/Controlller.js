@@ -1,4 +1,3 @@
-//kjsa
 function initMap() {
   var arraydata = dataStructure();
   var map = new google.maps.Map(document.getElementById("map"), {
@@ -30,7 +29,7 @@ function initMap() {
   }
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-      function (position) {
+      function(position) {
         /*var pos = {
         lat:  19.390519 ,
         lng:  -99.4238064
@@ -49,7 +48,7 @@ function initMap() {
         var brange = false;
         var resultPath;
         var resultColor;
-        brange = checkCoverage(position.coords.latitude, position.coords.longitude, poligonos);
+        brange= checkCoverage(position.coords.latitude,position.coords.longitude,poligonos);
         if (brange) {
           resultPath = "m 0 -1 l 1 2 -2 0 z";
           resultColor = "blue";
@@ -61,7 +60,7 @@ function initMap() {
           resultColor = "red";
           infoWindow.setContent("Úps! estamos mejorando nuestra cobertura");
         }
-
+        
         new google.maps.Marker({
           position: myLatLng,
           map: map,
@@ -75,7 +74,7 @@ function initMap() {
           }
         });
       },
-      function () {
+      function() {
         handleLocationError(true, infoWindow, map.getCenter());
       }
     );
@@ -85,118 +84,91 @@ function initMap() {
   }
 }
 
-$(window).on('load', function () {
-  $('#myModal').modal('show');
-  // Trigger map resize event after modal shown
-  $('#myModal').on('shown', function () {
-    google.maps.event.trigger(map, "resize");
-
-  });
-});
-
 function dataStructure() {
   var str = `[
-    {
-       "area1":{
+      {
+        "area1":{
           "color":"#DD92D4",
           "data":[
-             {
-                "lng":-103.38847160339355,
-                "lat":20.709555881251763
-             },
-             {
-                "lng":-103.3871841430664,
-                "lat":20.679927916296663
-             },
-             {
-                "lng":-103.35937499999999,
-                "lat":20.678482501697477
-             },
-             {
-                "lng":-103.35774421691893,
-                "lat":20.70080459152051
-             },
-             {
-                "lng":-103.37491035461426,
-                "lat":20.71188412094581
-             },
-             {
-                "lng":-103.38847160339355,
-                "lat":20.709555881251763
-             }
-          ]
-       }
-    },
-    {
-      "area2":{
-         "color":"#8E9FD8",
-         "data":[
             {
-               "lng":-103.38847160339355,
-               "lat":20.70265123599509
+              "lng":-103.38847160339355,
+              "lat":20.709555881251763
             },
             {
-               "lng":-103.39662551879883,
-               "lat":20.696067444156363
+              "lng":-103.3871841430664,
+              "lat":20.679927916296663
             },
             {
-               "lng":-103.39911460876465,
-               "lat":20.692373972366624
+              "lng":-103.35937499999999,
+              "lat":20.678482501697477
             },
             {
-               "lng":-103.4197998046875,
-               "lat":20.687716858013058
+              "lng":-103.35774421691893,
+              "lat":20.70080459152051
             },
             {
-               "lng":-103.42160224914551,
-               "lat":20.679205210717495
+              "lng":-103.37491035461426,
+              "lat":20.71188412094581
             },
             {
-               "lng":-103.39585304260254,
-               "lat":20.66635653729943
-            },
-            {
-               "lng":-103.37722778320312,
-               "lat":20.666758074799105
-            },
-            {
-               "lng":-103.37739944458008,
-               "lat":20.67936581225468
-            },
-            {
-               "lng":-103.38735580444335,
-               "lat":20.679847615846686
-            },
-            {
-               "lng":-103.38847160339355,
-               "lat":20.70265123599509
+              "lng":-103.38847160339355,
+              "lat":20.709555881251763
             }
-         ]
+          ]
+        }
+      },
+      {
+        "area2":{
+          "color":"#8E9FD8",
+          "data":[
+            {
+              "lng":-103.38847160339355,
+              "lat":20.70265123599509
+            },
+            {
+              "lng":-103.39662551879883,
+              "lat":20.696067444156363
+            },
+            {
+              "lng":-103.39911460876465,
+              "lat":20.692373972366624
+            },
+            {
+              "lng":-103.4197998046875,
+              "lat":20.687716858013058
+            },
+            {
+              "lng":-103.42160224914551,
+              "lat":20.679205210717495
+            },
+            {
+              "lng":-103.39585304260254,
+              "lat":20.66635653729943
+            },
+            {
+              "lng":-103.37722778320312,
+              "lat":20.666758074799105
+            },
+            {
+              "lng":-103.37739944458008,
+              "lat":20.67936581225468
+            },
+            {
+              "lng":-103.38735580444335,
+              "lat":20.679847615846686
+            },
+            {
+              "lng":-103.38847160339355,
+              "lat":20.70265123599509
+            }
+          ]
+        }
       }
-   },
-   {
-    "area3":{
-       "color":"#0008FF",
-       "data":[
-          {
-             "lng":-103.40194702148438,
-             "lat":20.621859611844727
-          },
-          {
-             "lng":-103.30839157104492,
-             "lat":20.608845416450194
-          },
-          {
-             "lng":-103.38220596313477,
-             "lat": 20.694943353567634
-          }
-       ]
-    }
- }
- ]`;
+
+    ]`;
   var arraydata = JSON.parse(str);
   var poligonos = [];
-  arraydata.forEach(function (element) {
+  arraydata.forEach(function(element) {
     var AuxPoligonos = [];
     for (let prop in element) {
       AuxPoligonos.push(element[prop]);
@@ -227,41 +199,19 @@ function checkCoverage(PARAM_latitude, PARAM_longitude, PARAM_polygon) {
 }
 
 function getCoordinatesFromAddress(PARAM_address) {
-  var Toreturn
-  var param1 = {
+ 
+var geocoder = new google.maps.Geocoder();
+geocoder.geocode({
     "address": PARAM_address
+}, function(results) {
+  console.log(results[0]);
+  console.log(results[0].geometry.location.lat()); //LatLng
+  console.log(results[0].geometry.location.lng()); //LatLng
+  var Toreturn={
+    lat: results[0].geometry.location.lat(),
+    lng:results[0].geometry.location.lng()
   }
-  var param2 = function (results) {
-    var perToreturn = {
-      lat: results[0].geometry.location.lat(),
-      lng: results[0].geometry.location.lng()
-    }
-    console.log(perToreturn)
-    return perToreturn;
-  }
-  var geocoder = new google.maps.Geocoder();
-  return  geocoder.geocode(param1, param2);;
-}
-
-
-
-
-
-function getAddressFromCoordinates(lat, lng) {
-  
-  var geocoder = new google.maps.Geocoder();
-  var latlng = new google.maps.LatLng(lat, lng);
-  geocoder.geocode({
-    'latLng': latlng
-  }, function (results, status) {
-    if (status === google.maps.GeocoderStatus.OK) {
-      if (results[1]) {
-        console.log(results[1].address_components);
-      } else {
-        alert('No results found');
-      }
-    } else {
-      alert('Geocoder failed due to: ' + status);
-    }
-  });
+  console.log(Toreturn)
+    return Toreturn;
+});
 }
