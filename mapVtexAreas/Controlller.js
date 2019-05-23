@@ -199,7 +199,6 @@ function checkCoverage(PARAM_latitude, PARAM_longitude, PARAM_polygon) {
 }
 
 function getCoordinatesFromAddress(PARAM_address) {
- 
 var geocoder = new google.maps.Geocoder();
 geocoder.geocode({
     "address": PARAM_address
