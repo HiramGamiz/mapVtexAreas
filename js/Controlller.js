@@ -4,8 +4,9 @@
 */
 function initMap() {
   var arraydata = dataStructure();
-  var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12.5, disableDefaultUI: true,
+  var map = new google.maps.Map(document.getElementById("map"), {//mapa inicial
+    zoom: 12.5, 
+    disableDefaultUI: true, //* Desactiva los contoles de google maps
     center: {
       lat: 20.681845076925256,
       lng: -103.39608907699585
@@ -62,7 +63,7 @@ function initMap() {
         } else {
           resultPath = google.maps.SymbolPath.CIRCLE;
           resultColor = "red";
-          infoWindow.setContent("Úps! estamos mejorando nuestra cobertura");
+          infoWindow.setContent("¡Ups! estamos mejorando nuestra cobertura");
         }
 
         new google.maps.Marker({
@@ -240,26 +241,7 @@ function dataStructure() {
             }
          ]
       }
-   },
-   {
-    "area3":{
-       "color":"#0008FF",
-       "data":[
-          {
-             "lng":-103.40194702148438,
-             "lat":20.621859611844727
-          },
-          {
-             "lng":-103.30839157104492,
-             "lat":20.608845416450194
-          },
-          {
-             "lng":-103.38220596313477,
-             "lat": 20.694943353567634
-          }
-       ]
-    }
- }
+   }
  ]`;
   var arraydata = JSON.parse(str);
   var polygons = [];
